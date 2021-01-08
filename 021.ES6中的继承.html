@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+      say() {
+        console.log('这是Person中静态的方法')
+      }
+    }
+    class Student extends Person {
+      constructor(pName, pAge, Pro) {
+        // 这个就相当于是使用Person.call(this,pName,pAge)
+        super(pName, pAge)
+        this.pro = Pro
+
+      }
+      run() {
+        console.log('这是student中静态的方法')
+      }
+    }
+    let stu1 = new Student('yang', 19, 1)
+    console.log(stu1.name)
+    console.log(stu1.age)
+    console.log(stu1.pro)
+    // Student.run()
+    console.log(stu1)
+  </script>
+</body>
+
+</html>

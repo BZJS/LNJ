@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 说是一件事不同对象上的表现不同
+    // 大概讲的意思就是两个构造对象，然后定义一个方法，方法的主体可以自由替换这两个对象，实现不同对象的不同展现
+    function Dog() {
+      this.eat = function () {
+        console.log('这是狗的eat方法')
+      }
+    }
+
+    function Cat() {
+      this.eat = function () {
+        console.log('这是猫的eat方法')
+      }
+    }
+
+    function feed(animail) {
+      animail.eat()
+    }
+    let dog = new Dog()
+    let cat = new Cat()
+    feed(dog)
+    feed(cat)
+  </script>
+</body>
+
+</html>

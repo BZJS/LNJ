@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 通过bind，call/apply三种形式的方式来继承
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      this.say = function () {
+        console.log('This is a Person function')
+      }
+    }
+
+    function Student(sex, name, age) {
+      // 之前那种继承的方式无法做到改变父构造函数的形参的形式，通过bind，call，apply可以做到改变新参，继承，其实原理就是把父构造函数中的this指向改变为子构造函数实例，这样其实就是给子构造函数的实例添加属性方法。
+      // 但是这种形式强行的继承其实Person和Student构造函数之间并没有什么关系，这样如果给Person的原型对象添加属性方法的话，Student的实例是没法找到的
+      // 解决方式就是改变相关原型链
+      Person.call(this, name, age)
+
+      this.sex = sex
+      this.run = function () {
+        console.log('This is a Student function')
+      }
+    }
+    // 改变原型链的方式--star
+    Student.prototype = Person.prototype
+    Student.prototype.constructor = Student
+    // ---end---
+    Person.prototype.asay = function () {
+      console.log('我是Person的原型对象方法')
+    }
+    let sut1 = new Student('男', 'yang', 19)
+    console.log(sut1.name)
+    console.log(sut1.age);
+    sut1.asay()
+  </script>
+</body>
+
+</html>

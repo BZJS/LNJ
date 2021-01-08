@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.js种继承的终极方法
+    // 1.1在子类的构造函数种通过call借助父类的构造函数
+    // 1.2将子类的原型对象修改为父类的实例对象
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      this.say = function () {
+        console.log("Person构造函数种的say方法")
+      }
+
+    }
+
+    function Student() {
+      this.class = '301'
+      // 这里操作第一步，使用call借助父类的构造函数
+      Person.call(this) //这里就是更改Person构造函数中的this指向
+      this.run = function () {
+        console.log('Student构造函数中的run方法')
+      }
+    }
+    // 第二步，新建立一个Person实例用来充当Student原型对象，这样就可以顺着Person实例回去找Person原型的方式解决了可以从Person原型对象上找共有的
+    Student.prototype = new Person()
+    Student.prototype.constructor = Student
+    Person.prototype.g = function () {
+      console.log('xinjian')
+    }
+    let stu1 = new Student()
+    stu1.g()
+  </script>
+</body>
+
+</html>

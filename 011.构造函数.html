@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let obj2 = {
+      say2: function () {
+        console.log('say2')
+      }
+    }
+    // 构造函数实际上就是工厂函数的简写
+    function Person(name, age) {
+      this.name = name,
+        this.age = age,
+        this.say = obj2.say2
+    }
+    let p1 = new Person('yang', 18)
+    p1.say()
+    // 这种构造函数中有一个性能问题，就是例如这种固定的，会导致开辟的多个新的对象空间中反复重复了
+    // 1.优化方案1：再外部定义一个方法，然后把这个方法的引用赋值给它。但是带来的问题是降低阅读性和命名污染。
+    // 2.第二种优化方式，为了防止命名污染，把方法放置到一个单独的对象中，然后把这个对象的方法赋值给该对线
+  </script>
+</body>
+
+</html>

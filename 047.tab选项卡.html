@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      width: 200px;
+      border: 1px solid black;
+    }
+
+    .current {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="current">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    let Li = document.querySelectorAll('li')
+    let currentIndex = 0
+    for (let i = 0; i < Li.length; i++) {
+      Li[i].onclick = function () {
+        // 把上一次的恢复为空
+        let item = Li[currentIndex]
+        item.className = ''
+        // 把当前的改变
+        this.className = 'current'
+        // 变换保存的上一次的索引
+        currentIndex = i
+      }
+    }
+    // 可以使用排他思想，但是使用for循环把全部搞一遍性能上是没有这个好的
+  </script>
+</body>
+
+</html>

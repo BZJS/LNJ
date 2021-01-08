@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" placeholder="获取表单事件">
+  <script>
+    let oText = document.querySelector('input[type=text]')
+    oText.onfocus = function () {
+      console.log('我获取到焦点了')
+    }
+    oText.onblur = function () {
+      console.log("啊，我失去焦点了")
+    }
+    oText.onchange = function () {
+      console.log('啊，我失去焦点时获取到改变的数')
+    }
+    oText.oninput = function () {
+      console.log(
+        "我实施获取改变"
+      )
+    }
+  </script>
+
+</body>
+
+</html>

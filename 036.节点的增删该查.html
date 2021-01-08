@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="parents">
+    <h1>biao</h1>
+  </div>
+  <script>
+    // 创建节点
+    let el = document.createElement("div")
+    console.log(el)
+    let parent1 = document.querySelector('.parents')
+    // 添加元素到尾部
+    parent1.appendChild(el)
+    console.log(parent1)
+    // 在某个元素中的某个子元素前插入
+    parent1.insertBefore(el, parent1.children[0])
+    console.log(parent1)
+    // 删除节点(删除节点要注意的一个点就是只能通过父元素删除，无法单独删除)
+    parent1.removeChild(el)
+    console.log(parent1)
+    // 克隆元素
+    let keLong = el.cloneNode()
+    console.log(keLong)
+  </script>
+</body>
+
+</html>

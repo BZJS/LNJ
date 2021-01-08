@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: url(./img/bb.jpg) center center no-repeat;
+      background-size: cover;
+
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .master {
+      height: 300px;
+      width: 300px;
+      background: url('./img/master.png') no-repeat;
+      position: absolute;
+    }
+
+    .master>span {
+      font-size: 60px;
+      position: absolute;
+      left: 70px;
+      top: 118px;
+      font-weight: bold;
+      text-shadow: 5px 5px 5px #c4cee1;
+    }
+
+    .zhazha {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./img/play.png" alt="">
+  <!-- <div class="master"><span>m</span></div> -->
+  <script>
+    let playLogo = document.querySelector('img')
+    // 创建一个保存鬼魂对象的数组
+    let List = []
+    let nNum = 0
+    playLogo.onclick = function () {
+      playLogo.parentNode.removeChild(playLogo)
+      setInterval(function () {
+        let s = new Master()
+        s.fly()
+        List.push(s)
+      }, 1000)
+    }
+    class Master {
+      constructor() {
+        let oDiv = document.createElement('div')
+        // oDiv.className = 'master'
+        oDiv.style.top = '900px'
+        oDiv.style.left = Math.random() * 1500 + 'px'
+        let oSpan = document.createElement('span')
+        // oSpan.innerText = 'm'
+        let classNum = this.generNum()
+        // 计数
+        let controlNum = document.createElement('span')
+        controlNum.className = 'zhazha'
+        // controlNum.innerText = '0'
+        document.body.appendChild(controlNum)
+        // 带有字母的类名
+        oDiv.className = 'master ' + classNum
+        oSpan.innerText = classNum
+
+        oDiv.appendChild(oSpan)
+        document.body.appendChild(oDiv)
+        this.oDivTop = oDiv
+      }
+      // 消除幽灵
+      bomb() {
+        // 1.消除幽灵
+        document.body.removeChild(this.oDivTop)
+        // 2.关闭当前幽灵的定时器
+        clearInterval(this.timer)
+      }
+      // 向上移动
+      fly() {
+        let offset = parseInt(this.oDivTop.style.top)
+        // 使用定时器减少top值
+        let self = this
+        this.timer = window.setInterval(function () {
+          offset -= 20
+          if (offset <= -300) {
+            self.bomb()
+          }
+          self.oDivTop.style.top = offset + 'px'
+        }, 200)
+      }
+      // 生成一个65-90的数对应的字母
+      generNum() {
+        let num = Math.floor(Math.random() * (90 - 65 + 1)) + 65
+        return String.fromCharCode(num)
+      }
+
+    }
+    document.body.onkeydown = function (event) {
+      let keyDown = event.key.toUpperCase()
+      let mainMaster = document.querySelector('.' + keyDown)
+      // document.body.removeChild(mainMaster)
+      // 1.根据div找到对应的鬼魂对象在数组中的位置
+      let currentIndex = List.findIndex(function (currentValue) {
+        return currentValue.oDivTop === mainMaster;
+      })
+      if (currentIndex == -1) return
+      // 2.根据位置取出对应的鬼魂对象
+      let controrNum = document.querySelector('.zhazha')
+      nNum++
+      controrNum.innerText = '俊b看片数：' + nNum
+      let currentSpercter = List[currentIndex]
+      // 3.将对应的鬼魂对象从body中删除
+      currentSpercter.bomb()
+      List.splice(currentIndex, 1)
+    }
+  </script>
+
+</body>
+
+</html>

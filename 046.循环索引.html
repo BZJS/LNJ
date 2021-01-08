@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*for (var i = 0; i < 3; i++) {
+      // 这里同名函数，后面的会覆盖前面的
+      function test() {
+        console.log(i)
+      }
+    }*/
+    // 这里的执行顺序是前面先执行完，然后再执行后面的test()函数时i的全局变量已经变为3了
+    // test()
+    for (let i = 0; i < 3; i++) {
+      function fn() {
+        console.log(i)
+      }
+    }
+    fn()
+  </script>
+</body>
+
+</html>

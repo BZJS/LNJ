@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="https://www.baidu.com">
+    <input type="text" placeholder="请输入账号">
+    <input type="password" placeholder="请输入密码">
+    <input type="submit" value="注册">
+  </form>
+  <script>
+    let oUser = document.querySelector("input[type=text]")
+
+    let password = document.querySelector("input[type=password]")
+    let submit = document.querySelector("input[type=submit]")
+    console.log(oUser)
+    submit.onclick = function () {
+      if (oUser.value.length < 6) {
+        oUser.style.background = 'red'
+        return false
+      } else {
+        oUser.style.background = '#fff'
+      }
+      if (password.value.length < 6) {
+        password.style.background = 'red'
+        return false
+      } else {
+        password.style.background = '#fff'
+      }
+    }
+  </script>
+</body>
+
+</html>

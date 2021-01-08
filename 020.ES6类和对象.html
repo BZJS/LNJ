@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // es6跟之前老实说差不多，只是形式变化了
+    class Person {
+      // 构造方法，在创建实例时会自动调用
+      constructor() {
+        // 这里要用类中的属性方法要以this
+      }
+      // 实例属性不用this了
+      name = "yang"
+      age = 18
+      say() {
+        console.log(this.name, this.age)
+      }
+      // 静态属性方法
+      static a1 = '1'
+      static f() {
+        console.log('静态方法')
+      }
+    }
+    let p1 = new Person()
+    p1.say()
+    Person.f()
+    // es6标准中是，实例方法和属性都要放置到构造方法中，然后外边的属于该类的原型对象上的
+  </script>
+</body>
+
+</html>

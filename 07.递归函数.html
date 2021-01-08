@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 递归函数 -->
+  <script>
+    // 这里会根据调用几次的logo函数来执行对应的‘欢迎回来’
+    function logo() {
+      let shuRu = prompt('请输入密码')
+      if (shuRu !== '123456') {
+        logo()
+      }
+      alert('欢迎回来')
+    }
+    logo()
+  </script>
+</body>
+
+</html>

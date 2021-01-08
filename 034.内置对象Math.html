@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 这里需要注释一下的是Data是本地对象，即类，需要new来创建对象，而Math是内置对象不需要new创建
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+    }
+    let random1 = getRandomInt(1, 19)
+    console.log(random1)
+    // 这里有太多Mat的内置对象的方法了，比较常用的我也是知道的，这里就不再搞了，需哟啊时可以去文档康康
+  </script>
+</body>
+
+</html>

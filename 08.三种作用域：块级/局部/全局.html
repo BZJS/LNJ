@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 全局不用说了
+    // 块级/局部在于是否是在函数内
+    if (true) {
+      var a = 9
+      // console.log(a)
+      function aaa() {
+
+      }
+
+    }
+    // if (true) {
+    //   console.log(a)
+    // }
+    console.log(a)
+    // 预解析的变量提升是:var aa和function aa(){}整体到当前作用于的前面，然后根据正常规则其他紧跟其后。
+  </script>
+</body>
+
+</html>

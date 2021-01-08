@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="h1" ac="aa">标题</div>
+  <script>
+    // 修改/获取属性的元素的两种形式
+    let h1 = document.querySelector('.h1')
+    console.log(h1)
+    // 获取元素属性
+    // 1.
+    let res = h1.className
+    console.log(res)
+    // 2.
+    let res2 = h1.getAttribute('class')
+    console.log(res2)
+    // 修改（另一个是直接h1.属性形式）
+    h1.setAttribute('class', 'h2')
+    h1.setAttribute('ac', 'zz')
+    console.log(h1)
+    // 新增就是修改两个方式，没有的话就是新增
+
+    // 删除，一种是直接赋值”“，另一种是使用方法
+    h1.removeAttribute('ac')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="one" name="aa">1</div>
+  <div class="in" name="aa">2</div>
+  <div class="in">3</div>
+  <div class="container">
+    <h1>跃迁</h1>
+    <div>1</div>
+  </div>
+  <script>
+    let res = document.getElementById('#one')
+
+    let res2 = document.getElementsByClassName('.in')
+
+    let res3 = document.getElementsByName('aa')
+
+    let res4 = document.getElementsByTagName('div')
+
+    // document.queryselect/document.queryselectAll
+
+    // 元素的子元素和节点，children/node(文本节点，元素节点，属性节点)，节点区分通过nodeType
+
+    // 获取元素的第一个子元素/子节点
+    let a1 = document.querySelector('.container')
+    // 第一个子节点
+    console.log(a1.firstChild)
+    // 第一个子元素
+    console.log(a1.firstElementChild)
+    // 最后一个节点
+    console.log(a1.lastChild)
+    // 最后一个元素
+    console.log(a1.lastElementChild)
+    // 父节点
+    console.log(a1.parentNode)
+    // 父元素
+    console.log(a1.parentElement)
+    // 往上相邻的元素
+    console.log(a1.previousElementSibling)
+    // 往上相邻的节点
+    console.log(a1.previousSibling)
+    // 往下相邻的元素
+    console.log(a1.nextElementSibling)
+    // 往下相邻的节点
+    console.log(a1.nextSibling)
+  </script>
+</body>
+
+</html>

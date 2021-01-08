@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 匿名函数的形式：function(){},但是必须立即使用
+    // 有三种使用场景
+    // 1.充当参数
+    function abc(a) {
+      a()
+    }
+    abc(function () {
+      console.log('aaaa')
+    })
+    // 2作为返回值
+    function ccc() {
+      return function () {
+        console.log('cccc')
+      }
+    }
+    let cf = ccc()
+    cf();
+    // 3立即执行函数
+    (function () {
+      console.log('这是匿名函数的第三种表达，立即执行函数')
+    })()
+  </script>
+</body>
+
+</html>

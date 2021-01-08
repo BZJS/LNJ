@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 第一种是纯数字的数组的排序
+    let arr = [1, 3, 2, 5, 4]
+    arr.sort(function (a, b) {
+      return a - b
+    })
+    console.log(arr)
+    // 另一种是字符串长度的排序
+    let arr2 = ["av", "avg", "a", "11111"]
+    arr2.sort(function (str, str2) {
+      return str.length - str2.length
+    })
+    console.log(arr2)
+    // 第三种是对象中某个属性来决定
+    let obj = [{
+      name: 'yang',
+      age: 19
+    }, {
+      name: 'cheng',
+      age: 20
+    }, {
+      name: 'zheng',
+      age: 18
+    }]
+    obj.sort(function (a, b) {
+      return a.age - b.age
+    })
+    console.log(obj)
+  </script>
+</body>
+
+</html>

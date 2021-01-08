@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 三种形式的改变元素内容 -->
+  <div class="h1">标题</div>
+  <script>
+    let h1 = document.querySelector('.h1')
+    h1.innerHTML = "<span>123</span>"
+    h1.innerText = "456"
+    h1.textContent = "789"
+    //判断对象是否有这个属性 "name" in obj
+    function f(obj, text) {
+      if ("textContent" in obj) {
+        obj.textContent = ""
+      } else {
+        obj.innerText = ""
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 面向对象/面向过程
+    // let obj2 = {
+    //   name: 'yang',
+    //   age: 18
+    // }
+    // console.log(obj2.age)
+    // 方法和函数的不同
+    let showline = () => {
+      console.log(this)
+    };
+    let obj3 = {
+      name: "cheng",
+      age: 19,
+      say() {
+        console.log('I’m obj3的方法')
+        console.log(this)
+      }
+
+    }
+    // 这种能单独调用和this是指向的对象是window的就是函数
+    showline()
+    // 这种要依附对象才能调用的和this是指向对象的是方法
+    obj3.say()
+  </script>
+</body>
+
+</html>

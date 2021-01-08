@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn1() {
+      console.log(this)
+    }
+    let obj1 = {
+      age: 18,
+      say: function () {
+        console.log(this)
+      }
+    }
+    // 1.使用bind改变fn1函数种的this指向为obj1,bind改变完指向后会返回一个新函数
+    let newF = fn1.bind(obj1)
+    newF()
+    // 2.使用call改变函数种的this指向
+    fn1() //这三种方式改变this的指向都不会改变原函数
+    fn1.call(obj1)
+    fn1()
+    fn1.apply(obj1)
+  </script>
+</body>
+
+</html>

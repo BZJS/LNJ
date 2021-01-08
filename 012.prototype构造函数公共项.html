@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name,
+        this.age = age
+    }
+    Person.prototype = {
+      say: function () {
+        console.log('公共的')
+      }
+    }
+    let obj1 = new Person('yang', 19)
+    let obj2 = new Person('cheng', 18)
+    // console.log(obj1.say)
+    // console.log(obj2.say)
+    console.log(Function)
+    let boll = Person.__proto__ == Function.prototype
+    console.log(boll)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 判断对象中是否有某个属性
+    class Person {
+      constructor() {
+        this.name = 'person'
+      }
+    }
+    let p1 = new Person()
+    // 这种in的形式会查找原型对象中的
+    console.log("name" in p1)
+    // 另一种是hasOwnProperty
+    console.log(p1.hasOwnProperty("name"))
+  </script>
+</body>
+
+</html>

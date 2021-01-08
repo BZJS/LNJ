@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 获取对象的真实类型，通过其构造函数得知
+    class Person {
+      constructor() {
+        this.name = 'person'
+      }
+    }
+    let p1 = new Person()
+    console.log(p1.constructor.name)
+  </script>
+</body>
+
+</html>
