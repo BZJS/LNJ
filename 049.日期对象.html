@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 日期对象
+    let time1 = new Date()
+    console.log(time1)
+    // 这个是到1970年1月1日的时间
+    console.log(Date.now())
+    let time2 = new Date('2020-11-09 09:33:11')
+    console.log(time2)
+    // 时间格式化方法封装
+    // 这里要注意点就是获得的月份少一
+    function timeGeShiHua(time) {
+      return `${time.getFullYear()}-${time.getMonth()+1}-${time.getDay()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
+    }
+    let time3 = new Date()
+    console.log(timeGeShiHua(time3))
+    console.log('相差的天数、小时、分钟、秒')
+    let time4 = new Date();
+    let time5 = new Date('2020-11-11 09:00:00');
+    let res = time4 - time5
+    console.log(res)
+    // 相差天数
+    console.log(parseInt(res / 1000 / 60 / 60 / 24))
+    // 相差小时数(这是省略了天数的主语的)
+    console.log(parseInt(res / 1000 / 60 / 60 % 24))
+    // 相差分钟数(也是省略了天数)
+    console.log(parseInt(res / 1000 / 60 % 60))
+    // 以上数据是相连的不是单独计算相差多少小时的
+  </script>
+</body>
+
+</html>
