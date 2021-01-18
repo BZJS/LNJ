@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let crtTime = new Date()
+    let res = dateFormart("yyyy-MM-dd hh:mm:ss", crtTime)
+    console.log(res)
+
+    function dateFormart(fmt, date) {
+      let reg = /y+/;
+      let yearStr = fmt.match(reg)[0];
+      let yearNum = date.getFullYear() + "";
+      yearNum = yearNum.substr(4 - yearStr.length)
+      fmt = fmt.replace(yearStr, yearNum) //这个是把那个前面的年的位数替换为本地的数字对应的位数
+      console.log(fmt)
+
+
+
+
+    }
+  </script>
+</body>
+
+</html>

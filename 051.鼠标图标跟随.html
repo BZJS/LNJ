@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./img/master.png" alt="">
+  <script>
+    let imgLogo = document.querySelector('img')
+    let body = document.body
+    let oImg = getComputedStyle(imgLogo)
+    body.onmousemove = function (event) {
+
+      imgLogo.style.marginLeft = event.clientX - parseFloat(imgLogo.width) / 2 + 'px'
+      imgLogo.style.marginTop = event.clientY - parseFloat(imgLogo.height) / 2 + 'px'
+    }
+  </script>
+</body>
+
+</html>

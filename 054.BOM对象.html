@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="btn1">btn1</button>
+  <button class="btn2">btn2</button>
+  <button class="btn3">btn3</button>
+  <button class="btn4">btn4</button>
+  <script class="btn1">
+    /* let n1 = window.navigator.userAgent
+    console.log(n1)
+    if (/Safari/i.test(n1)) {
+      alert('这是谷歌浏览器')
+    } else if (/Firefox/i.test(n1)) {
+      alert('这是火狐浏览器')
+    }*/
+    let btn1 = document.querySelector('.btn1')
+    let btn2 = document.querySelector('.btn2')
+    let btn3 = document.querySelector('.btn3')
+    let btn4 = document.querySelector('.btn4')
+    btn1.onclick = function () {
+      // 获取地址
+      let r1 = window.location.href;
+      console.log(r1)
+    }
+    btn2.onclick = function () {
+      window.location.href = "https://www.baidu.com";
+    }
+    btn3.onclick = function () {
+      // window.location.reload()正常的刷新
+      window.location.reload();
+
+    }
+    btn4.onclick = function () {
+      // 强制刷新---window.location.reloa(true)
+      window.location.reload(true);
+    }
+  </script>
+</body>
+
+</html>

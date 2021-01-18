@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 正则表达式，描述字符串的规则对象
+    // 两种方式，跟常规的那种对象的形式是很像的，一种是对象的形式，一种是字面量
+    let str = '12345gad';
+    let e1x = new RegExp("A", "i");
+    var myRe = new RegExp("d(b+)d", "g");
+    let bb = new RegExp('A')
+    let bb2 = /A/
+    let bl = bb2.test(str)
+    console.log(bl)
+  </script>
+</body>
+
+</html>
